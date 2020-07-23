@@ -6,7 +6,7 @@ from time import strftime
 
 class QianchengwuyouPipeline(object):
     def open_spider(self, spider):
-        self.db = pymysql.connect('localhost', 'root', 'yellow', charset='utf8', db='z_test')
+        self.db = pymysql.connect('localhost', 'root', 'root', charset='utf8', db='test')
         self.cursor = self.db.cursor()
 
     def close_spider(self, spider):

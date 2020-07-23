@@ -1,5 +1,5 @@
 from scrapy import cmdline
-cmdline.execute(['scrapy', 'crawl', 'qiancheng'])
+cmdline.execute(['scrapy', 'crawl', 'qianchengspider'])
 
 """
 库名：z_test
