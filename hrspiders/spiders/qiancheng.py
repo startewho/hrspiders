@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 import scrapy
 from urllib import parse
-from ..items import QianchengwuyouItem
+from ..hrspiders.items import QianchengwuyouItem
 import re
 kw = input('输入搜索词：').strip()
 
 
-class ExampleSpider(scrapy.Spider):
-    name = 'example'
+class QianChengSpider(scrapy.Spider):
+    name = 'qianchengwuyou'
     # 起始页，两层URL编码
     start_urls = ['https://search.51job.com/list/000000,000000,0000,00,9,99,{},2,1.html'.format(
         parse.quote(parse.quote(kw)))]

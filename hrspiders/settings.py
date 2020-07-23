@@ -9,10 +9,10 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'qianchengwuyou'
+BOT_NAME = 'hrspiders'
 
-SPIDER_MODULES = ['qianchengwuyou.spiders']
-NEWSPIDER_MODULE = 'qianchengwuyou.spiders'
+SPIDER_MODULES = ['hrspiders.spiders']
+NEWSPIDER_MODULE = 'hrspiders.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
@@ -47,13 +47,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'qianchengwuyou.middlewares.QianchengwuyouSpiderMiddleware': 543,
+#    'hrspiders.middlewares.QianchengwuyouSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'qianchengwuyou.middlewares.QianchengwuyouDownloaderMiddleware': 543,
+#    'hrspiders.middlewares.QianchengwuyouDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -65,7 +65,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-   'qianchengwuyou.pipelines.QianchengwuyouPipeline': 300,
+   'hrspiders.pipelines.QianchengwuyouPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
