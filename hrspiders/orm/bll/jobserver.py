@@ -1,10 +1,10 @@
-from ..model import Area
+from ..model import Job
 from sqlobject import SQLObject,ForeignKey,StringCol,IntCol
 from ..bll import Session
-class AreaServer:
+class JobServer:
 
     @staticmethod
     def getList(query):
         areaSession=Session()
-        list=areaSession.query(Area).order_by(Area.id)
+        list=areaSession.query(Job).order_by(Job.url)
         return list
