@@ -1,16 +1,14 @@
-from sqlobject import SQLObject,ForeignKey,StringCol,IntCol
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Column, Integer, String, ForeignKey,DateTime
 
-# 区域表
-class Area(SQLObject):
+Base = declarative_base()
 
-    class sqlmeta:
-        idName='id'
-        lazyUpdate = True
-        cacheValues = False
-   
-    areaCode=StringCol()
-    areaSimple=StringCol()
-    phoneCode=StringCol()
-    name=StringCol()
-    pid=IntCol()
+class Area(Base):
+    __tablename__ = 'area'
 
+    id = Column(Integer, primary_key=True)
+    area_code = Column(String)
+    area_simple= Column(String)
+    phone_code= Column(String)
+    name= Column(String)
+    pid= Column(Integer)
