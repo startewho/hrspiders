@@ -10,6 +10,13 @@
             "request": "launch",
             "program": "main.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "调试Test",
+            "type": "python",
+            "request": "launch",
+            "program": "test\\test_orm.py",
+            "console": "integratedTerminal"
         }
     ]
 }
