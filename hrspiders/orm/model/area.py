@@ -1,5 +1,6 @@
 from sqlobject import SQLObject,ForeignKey,StringCol,IntCol
 
+# 区域表
 class Area(SQLObject):
 
     class sqlmeta:
