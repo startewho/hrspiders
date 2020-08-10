@@ -2,7 +2,6 @@ from scrapy import cmdline
 
 import sys,os
 sys.path.append("..")
-from  utils import confighelper
 from  hrspiders.orm.bll.areaserver import AreaServer
 
 
