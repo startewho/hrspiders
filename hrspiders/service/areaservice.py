@@ -1,7 +1,7 @@
+
 from ..model import Area
-from sqlobject import SQLObject,ForeignKey,StringCol,IntCol
-from ..bll import Session
-class AreaServer:
+from ..service import Session
+class AreaService:
 
     @staticmethod
     def getList(query):

@@ -2,24 +2,21 @@
 
 import pymysql
 from time import strftime
-
-
+from .service import JobService,Session
+from .model import Job
 class QianchengwuyouPipeline(object):
     def open_spider(self, spider):
-        self.db = pymysql.connect('localhost', 'root', 'root', charset='utf8', db='test')
-        self.cursor = self.db.cursor()
+        self.session = Session()
+        self.jobService = JobService(self.session)
 
     def close_spider(self, spider):
-        self.cursor.close()
-        self.db.close()
+        self.session.Remove()
+
 
     def process_item(self, item, spider):
         item['collect_date'] = strftime('%Y-%m-%d')
-        ls = [(k, item[k]) for k in item if item[k] is not None]
-        sql = 'INSERT quanguo (' + ','.join([i[0] for i in ls]) + \
-              ') VALUES (' + ','.join(['%r' % i[1] for i in ls]) + ');'
-        print('\033[033m', sql, '\033[0m')
-        self.cursor.execute(sql)
-        self.db.commit()
+        job=Job()
+        for k in item:
+         job[k]=item[k]
         return item
 

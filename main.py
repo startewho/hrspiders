@@ -1,6 +1,6 @@
 from scrapy import cmdline
 from sqlobject import sqlhub,connectionForURI
-from utils.confighelper import getConfig
+from hrspiders.utils.confighelper import getConfig
 
 
 

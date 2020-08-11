@@ -1,9 +1,9 @@
+
+
 from scrapy import cmdline
 
-import sys,os
-sys.path.append("..")
-from  hrspiders.orm.bll.areaserver import AreaServer
 
+from ..service import AreaServer
 
 areaList=AreaServer.getList('')
 for a in areaList:

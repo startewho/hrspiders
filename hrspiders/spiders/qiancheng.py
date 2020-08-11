@@ -3,7 +3,7 @@ import scrapy
 from urllib import parse
 from ..items import QianchengwuyouItem
 import re
-kw = input('输入搜索词：').strip()
+kw = '.net'
 
 
 class QianChengSpider(scrapy.Spider):
@@ -13,7 +13,7 @@ class QianChengSpider(scrapy.Spider):
         parse.quote(parse.quote(kw)))]
     # 搜索页
     def parse(self, response):
-        ls_url = response.xpath('//p/span/a').re('href="(.*?)"')
+        ls_url = response.xpath('//div[@class="j_joblist"]/div[@class="e"]/a').re('href="(.*?)"')
         for url in ls_url:
             yield scrapy.Request(url=url, callback=self.parse_detail)
         next_page = response.xpath('//*[@id="resultList"]/div[55]/div/div/div/ul/li[8]/a').re('href="(.*?)"')
